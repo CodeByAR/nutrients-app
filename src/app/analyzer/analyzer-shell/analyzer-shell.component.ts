@@ -41,7 +41,6 @@ export class AnalyzerShellComponent implements OnInit {
       )
       .subscribe((data) => {
         this.analysisData = data;
-        console.log('data', data);
       });
   }
 
