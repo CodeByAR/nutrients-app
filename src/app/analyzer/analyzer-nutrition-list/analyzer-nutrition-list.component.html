@@ -1,0 +1,19 @@
+<h6 class="mt-4">Total Nutrition:</h6>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Categpry</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container>
+      <tr *ngFor="let tdk of objectKeys(totalDaily)">
+        <td>{{ totalDaily[tdk]["label"] }}</td>
+        <td>{{ totalDaily[tdk]["quantity"] | number }}</td>
+        <td>{{ totalDaily[tdk]["unit"] }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

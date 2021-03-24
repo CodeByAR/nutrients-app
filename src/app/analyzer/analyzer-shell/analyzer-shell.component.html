@@ -1,0 +1,17 @@
+<div class="analyzer-shell-container">
+  <app-analyzer-input
+    *ngIf="!(displayResult$ | async)"
+    (analyzeIngredients)="analyzeIngr($event)"
+    [ingredients]="analyzerInput$ | async"
+  ></app-analyzer-input>
+  <app-analyzer-summary
+    *ngIf="analysisData && (displayResult$ | async)"
+    [ingredients]="analysisData?.ingredients"
+    (back)="clearIngredients()"
+    (totalNutrition)="displayTotal()"
+  ></app-analyzer-summary>
+  <app-analyzer-nutrition-list
+    *ngIf="(displayTotal$ | async) && (displayResult$ | async)"
+    [totalDaily]="analysisData?.totalDaily"
+  ></app-analyzer-nutrition-list>
+</div>

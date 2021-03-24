@@ -1,0 +1,33 @@
+<button class="btn btn-outline-primary" (click)="backClick()">Back</button>
+<hr/>
+<h6>Ingredients:</h6>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Quantity</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Food</th>
+      <th scope="col">Calories</th>
+      <th scope="col">Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let parsedIngr of ingredients">
+      <tr *ngFor="let ingr of parsedIngr.parsed">
+        <th scope="row">{{ ingr.quantity }}</th>
+        <td>{{ ingr.measure }}</td>
+        <td>{{ ingr.food }}</td>
+        <td>
+          {{
+            (ingr.nutrients.ENERC_KCAL.quantity | number) +
+              " " +
+              ingr.nutrients.ENERC_KCAL.unit
+          }}
+        </td>
+        <td>{{ (ingr.weight | number) + ' g' }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+<hr/>
+<button class="btn btn-primary" (click)="displayTotal()">Total Nutrition</button>
