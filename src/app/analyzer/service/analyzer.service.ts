@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class AnalyzerService {
-  baseUrl = environment.apiUrl;
+  // baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

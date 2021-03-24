@@ -22,4 +22,15 @@ describe('AnalyzerInputComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('submitAnalyze', () => {
+    it('should emit ingredients event', () => {
+      spyOn(component.analyzeIngredients, 'emit');
+
+      component.submitAnalyze();
+
+      expect(component.analyzeIngredients.emit).toHaveBeenCalled();
+
+    })
+  })
 });

@@ -22,4 +22,20 @@ describe('AnalyzerSummaryComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('backClick', () => {
+    it('should emit event', () => {
+      spyOn(component.back, 'emit');
+      component.backClick();
+      expect(component.back.emit).toHaveBeenCalled();
+    })
+  })
+
+  describe('displayTotal', () => {
+    it('should emit event', () => {
+      spyOn(component.totalNutrition, 'emit');
+      component.displayTotal();
+      expect(component.totalNutrition.emit).toHaveBeenCalled();
+    })
+  })
 });
