@@ -1,0 +1,12 @@
+<div class="form-group mb-3">
+  <label for="enterIngredients">Enter Ingredients:</label>
+  <textarea
+    class="form-control"
+    id="enterIngredients"
+    rows="5"
+    [(ngModel)]="ingredients"
+  ></textarea>
+</div>
+<div class="form-group">
+    <button class="btn" [disabled]="ingredients.trim().length == 0" [ngClass]="ingredients.trim().length > 0 ? 'btn-primary': 'btn-outline-primary'" (click)="submitAnalyze()">Analyze</button>
+</div>

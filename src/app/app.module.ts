@@ -7,6 +7,7 @@ import { ShellComponent } from './home/shell/shell.component';
 import { MenuComponent } from './home/menu/menu.component';
 import { PageNotFoundComponent } from './home/page-not-found/page-not-found.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
     PageNotFoundComponent,
     WelcomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
