@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-analyzer-input',
@@ -6,12 +6,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./analyzer-input.component.scss'],
 })
 export class AnalyzerInputComponent {
-  ingredients: string = '';
+  @Input() ingredients: string = '';
   @Output() analyzeIngredients = new EventEmitter<string>();
-
   
   submitAnalyze() {
-    // console.log(this.ingredients);
     this.analyzeIngredients.emit(this.ingredients);
   }
 
