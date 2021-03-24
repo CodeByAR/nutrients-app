@@ -10,14 +10,21 @@ const routes: Routes = [
     component: ShellComponent,
     children: [
       { path: 'welcome', component: WelcomeComponent },
+      {
+        path: 'analyzer',
+        loadChildren: () =>
+          import('./analyzer/analyzer.module').then(
+            (mod) => mod.AnalyzerModule
+          ),
+      },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-    ]
+    ],
   },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
