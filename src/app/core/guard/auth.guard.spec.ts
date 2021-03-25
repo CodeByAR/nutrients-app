@@ -13,4 +13,11 @@ describe('AuthGuard', () => {
   it('should be created', () => {
     expect(guard).toBeTruthy();
   });
+
+  describe('canActivate', () => {
+    it('should return true', () => {
+      let outcome = guard.canActivate(null, null);
+      expect(outcome).toBeTruthy();
+    })
+  })
 });

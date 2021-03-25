@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guard/auth.guard';
 import { PageNotFoundComponent } from './home/page-not-found/page-not-found.component';
 import { ShellComponent } from './home/shell/shell.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
   {
     path: '',
     component: ShellComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'welcome', component: WelcomeComponent },
       {
@@ -20,7 +22,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     ],
   },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
