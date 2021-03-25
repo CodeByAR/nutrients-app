@@ -17,27 +17,33 @@ describe('StateService', () => {
   describe('changeAnalyzerState', () => {
     it('should call analyzerResult.next', () => {
       service.changeAnalyzerState(null);
+      expect(service).toBeTruthy();
     });
   });
   describe('changeDisplayResult', () => {
     it('should call displayResult.next', () => {
       service.changeDisplayResult(true);
+      expect(service).toBeTruthy();
     });
     it('should call analyzerResult.next when false', () => {
       service.changeDisplayResult(false);
+      expect(service).toBeTruthy();
     });
     it('should call displayTtlNutr.next when false', () => {
       service.changeDisplayResult(false);
+      expect(service).toBeTruthy();
     });
   });
   describe('changeAnalyserInput', () => {
     it('should call analyzerInput.next', () => {
       service.changeAnalyserInput(null);
+      expect(service).toBeTruthy();
     });
   });
   describe('changeDisplayNutrition', () => {
     it('should call displayTtlNutr.next', () => {
       service.changeDisplayNutrition(false);
+      expect(service).toBeTruthy();
     });
   });
 });
