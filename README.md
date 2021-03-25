@@ -13,7 +13,7 @@ Run below commands in command prompt after cloning/downloading the code
 
 ## How to generate Test Code Coverage Report?
 > Run below command in command prompt after ***npm install** is completed\
-***npm run test-coverage***\
+***npm run test-coverage***
 
 ## Test Code Coverage
 ![image](https://user-images.githubusercontent.com/39939363/112422708-4ee16e80-8d57-11eb-8b3f-96279d2adc80.png)
